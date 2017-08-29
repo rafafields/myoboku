@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Artesano</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+    <!--  Llamando a fuente de Google  -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body>
+
+<section id="loading" class="vivify">
+  <div class="loading-outer">
+      <div class="loading-text main-text">
+          <p>Hola Jiraiya</p>
+      </div>
+      <div class="loading-icon-outer anim grow main-bg">
+          <i class="fa fa-rotate-right fa-spin loading-icon"></i>
+      </div>
+  </div>
+</section>
+  
+<button data-toggle="toggle-menu" data-target="#toggle-nav" class="navbar-toggle">
+   <span class="sr-only">Toggle navigation</span> 
+   <span class="icon-bar"></span> 
+   <span class="icon-bar"></span> 
+   <span class="icon-bar"></span>
+</button>
+   
+<nav class="toggle-nav" id="toggle-nav">
+
+    <div id="brand">
+        <a href="#">
+            <img class="logo" src="img/logo.png" alt="Myoboku">
+        </a>
+    </div>
+    <ul class="toggle-nav-menu">
+        <li>
+            <a href="#about" name="goto"> Qué contiende Myoboku</a>
+        </li>
+        <li class="has-submenu dropdown">
+            <a href="javascript:void(0)" class="has-icon dropdown-toggle" data-toggle="dropdown" name="goto"><i class="fa fa-bolt"></i> Versión fácil</a>
+            <ul class="dropdown-menu">
+                <li><a href="#easy-1" name="goto">Clases auxiliares</a></li>
+                <li><a href="#easy-1" name="goto">Paleta de colores</a></li>
+                <li><a href="#easy-2" name="goto">Animaciones</a></li>
+                <li><a href="#easy-2" name="goto">Integración con FA</a></li>
+                <li><a href="#easy-3" name="goto">Botones</a></li>
+                <li><a href="#easy-3" name="goto">Formularios</a></li>
+                <li><a href="#easy-4" name="goto">Tablas</a></li>
+                <li><a href="#easy-4" name="goto">Menú lateral</a></li>
+            </ul>
+        </li>
+        <li class="has-submenu dropdown">
+            <a href="javascript:void(0)" class="has-icon dropdown-toggle" data-toggle="dropdown" name="goto"><i class="fa fa-book"></i> Docu</a>
+            <ul class="dropdown-menu">
+                <li><a href="#aux" name="goto">Clases auxiliares</a></li>
+                <li><a href="#color" name="goto">Paleta de colores</a></li>
+                <li><a href="#anim" name="goto">Animaciones</a></li>
+                <li><a href="#fa" name="goto">Integración con FA</a></li>
+                <li><a href="#btns" name="goto">Botones</a></li>
+                <li><a href="#forms" name="goto">Formularios</a></li>
+                <li><a href="#tables" name="goto">Tablas</a></li>
+                <li><a href="#togmenu" name="goto">Menú lateral</a></li>
+                <li><a href="#ldn" name="goto">Loading CSS</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="has-icon"><i class="fa fa-user"></i> About us</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="has-icon"><i class="fa fa-cube"></i> Product</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="has-icon"><i class="fa fa-envelope"></i> Contact</a>
+        </li>
+    </ul>
+    <div class="featured-content">
+        <a href="#">
+            <img src="http://via.placeholder.com/350x150?text=Featured+Content" alt="Banner" class="img-responsive center-block">
+        </a>
+    </div>
+    <ul class="toggle-nav-social-menu">
+        <li>
+            <a href="javascript:void(0)"><i class="fa fa-codepen"></i></a>
+        </li>
+    </ul>
+    <div class="toggle-nav-footer">
+        Myoboku CC 2017
+    </div>
+</nav>
+
+<div class="jumbotron up fat">
+    <img class="logo" src="img/logo.png" alt="Myoboku">
+    <div class="text-center">
+        <h3 class="bold" contenteditable="true">Bienvenido a <span class="main-text">Myoboku</span>, el mejor complemento<br> sobre Bootstrap del mundo</h3>
+        <p>
+            <a href="#easy" name="goto" class="btn btn-cta btn-md"><i class="fa fa-bolt"></i> Versión fácil</a> 
+            <a href="#docu" name="goto" class="btn btn-main btn-md"><i class="fa fa-book"></i> Documentación</a>
+            <br>
+            <small><a href="#about" name="goto" class="cta-text">¿Qué contiene?</a></small>
+        </p>
+    </div>
+</div>
+
+<section id="about" class="container-fluid up">
+   
+    <h3 class="h1 bold slim">
+        ¿Qué contiene <span class="cta-text">Myoboku</span>?
+    </h3>
+    
+    <div class="row">
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-wrench fa-3x low cta-text"></i>
+            <h4 class="main-text">Clases <b>auxiliares</b></h4>
+            <p>Crea o formatea espacios poniendo clases muy simples sin afectar a la estructura creada por Bootstrap.</p>
+            <a href="#aux" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-tint fa-3x low cta-text"></i>
+            <h4 class="main-text">Paleta de <b>colores</b></h4>
+            <p>Crea un array con tantos colores como necesites y Pidegey fabricará para tí las clases CSS para pintar el fondo o el texto con cada color. Además, Myoboku fabricará versiones claras y oscuras de cada color.</p>
+            <a href="#color" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-magic fa-3x low cta-text"></i>
+            <h4 class="main-text">Creador de <b>animaciones CSS</b></h4>
+            <p>Crea animaciones fácilmente solo introduciendo parámetros. Ya no tienes que copiar y pegar bloques enteros de código ni preocuparte por la compativilidad de diferentes naveadores.</p>
+            <a href="#anim" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-font-awesome fa-3x low cta-text"></i>
+            <h4 class="main-text">Integrado con <b>FontAwesome</b></h4>
+            <p>Usa los iconos de FA con normalidad, ya que FA está preparado para ajustarse a Bootstrap igual que Myoboku. Además, Myoboku lleva incorporada la librería de iconos de FA para usarlos sin sus clases originales desde tu propio css.</p>
+            <a href="#fa" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-hand-pointer-o fa-3x low cta-text"></i>
+            <h4 class="main-text"><b>Botones</b> increíbles</h4>
+            <p>Myoboku mejora los botones básicos de Bootstrap añadiendo estilo flat (por defecto), hollow (botón vacío), tamaños ajustados a tus variables SASS y colores importados desde la paleta de Myoboku.</p>
+            <a href="#btns" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-tasks fa-3x low cta-text"></i>
+            <h4 class="main-text"><b>Formulario</b> mejorado</h4>
+            <p>Myoboku añade colores personalizados a las notificaciones y a los inputs, e incorpora efectos en el click. También mejora los tamaños de ciertos elementos como los <code>select</code> o los <code>input type="checkbox"</code>.</p>
+            <a href="#forms" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-table fa-3x low cta-text"></i>
+            <h4 class="main-text"><b>Tablas</b> responsive</h4>
+            <p>Eliminamos el scroll lateral de las tablas responsive de bootstrap con el parámetro <code>data-col</code>. Además, Myoboku añade clases para colorear la tabla con su paleta.</p>
+            <a href="#tables" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-bars fa-3x low cta-text"></i>
+            <h4 class="main-text"><b>Menú</b> lateral</h4>
+            <p>Crea un menú lateral responsive con logos, menús, submenús, banners e iconos de RRSS.</p>
+            <a href="#togmenu" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+        <div class="col-sm-4 med fat">
+            <i class="fa fa-hourglass fa-3x low cta-text"></i>
+            <h4 class="main-text"><b>Loading</b> en CSS</h4>
+            <p>Habilita tu propio loading configurable con las variables de Myoboku. Ejecútalo con javascript o programa su duración con CSS.</p>
+            <a href="#ldn" name="goto" class="btn btn-cta btn-sm no-margin anim click click-tap">Documentación</a>
+        </div>
+    </div>
+    
+</section>
+
+<section id="easy" class="container-fluid up">
+   
+    <h3 class="h1 bold slim">
+        <span class="main-text">¿Tienes prisa?</span> Esto es para tí
+    </h3>
+    
+    <div class="low"></div>
+    
+    <div class="slim">
+        <h4 class="cta-bg sup-text low slim">
+            <i class="fa fa-check"></i> Instalación rápida
+        </h4>
+        
+        <p>Para que Myoboku funcione, necesitas:</p>
+        
+        <ul>
+            <li>Achivo de Myoboku minificado <a href="css/master/master.css" class="btn btn-sm btn-main"><i class="fa fa-download"></i> Descarga el estándar</a> o <a href="#docu" class="btn btn-sm btn-cta" name="goto"><i class="fa fa-paint-brush"></i> Créalo tu mismo</a></li>
+            <li>Archivo de CSS boostrap <a href="http://getbootstrap.com/getting-started/" class="btn btn-sm btn-main"> Ir a web de bootstrap</a></li>
+            <li>Librería jQuery <a href="http://code.jquery.com/" class="btn btn-sm btn-main">Ir a web de jQuery</a></li>
+            <li>Archivo de jQuery boostrap <a href="http://getbootstrap.com/getting-started/" class="btn btn-sm btn-main"> Ir a web de bootstrap</a></li>
+        </ul>
+    </div>
+    
+    <div class="row" id="easy-1">
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-wrench"></i> Clases Auxiliares
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-arrows-v fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                Para poner espacio Arriba/Abajo de los elementos html
+                </p>
+<pre>
+class="tiny"    -> Espacio de 7.5px
+class="low"     -> Espacio de 15px
+class="med"     -> Espacio de 30px
+class="up"      -> Espacio de 60px
+</pre>
+               <p>
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-arrows-h fa-stack-1x fa-inverse"></i>
+                </span>
+               Para poner espacio Izquierda/Derecha de los elementos html</p>
+<pre>
+class="thin"    -> Espacio de 7.5px
+class="slim"    -> Espacio de 15px
+class="fat"     -> Espacio de 30px
+class="dope"    -> Espacio de 60px
+</pre>        
+               <p>
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+                </span>
+               Para eliminar las propiedades por defecto de html o bootstrap</p>
+<pre>
+class="no-margin"        
+class="no-padding"       
+class="no-border"       
+class="no-border-radius" 
+</pre>
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p><a href="#aux" class="btn btn-main btn-hollow">Ver docu completa</a></p>
+      </div>
+       
+        </div>
+        
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-tint"></i> Paleta de color
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-th fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Colores de la paleta</b> <br>
+                Paleta de Myoboku (SASS)
+                </p>
+<pre>
+$nocolor    : transparent;
+$pale       : white;
+$main       : #e29c37;
+$cta        : tomato;
+$sup        : lightyellow;
+$trans      : #dadada;
+$base       : #333;
+</pre>
+
+<p>Avisos de bootstrap (SASS)</p>
+
+<pre>
+$danger     : crimson;
+$warning    : gold;
+$success    : limegreen;
+</pre>
+              
+               <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-tint fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Usando los colores</b><br>
+                Sustituye main por cta, sup, trans, base, danger, warning o success para colorear cada color.
+                </p>
+<pre>
+class="main-text" -> Colorea el texto
+class="main-bg"   -> Colorea el fondo
+</pre>          
+               <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-eye-slash fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Usando las variaciones</b><br>
+                Puedes usar dark-(color) o light-(color) para colorear con variantes tonales de cada color.
+                </p>
+<pre>
+class="dark-main-text"  -> Colorea el texto
+class="light-main-bg"   -> Colorea el fondo
+</pre>
+               
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p><a href="#color" class="btn btn-main btn-hollow">Ver docu completa</a></p>
+      </div>
+        </div>
+    </div><!-- /row -->
+    
+    <div class="row" id="easy-2">
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-magic"></i> Animaciones
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-magic fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Clases de animaciones normales</b><br>
+                Para que funcione la animación, el elemento animado debe tener la clase <code>anim</code>. Junto a esta clase, añade la clase de la animación que quieras.
+                </p>
+<pre>
+div class="anim fade"
+</pre>
+               <p>
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-mouse-pointer fa-stack-1x fa-inverse"></i>
+                </span>
+               <b>Clases de animacion al hacer clic (puro CSS)</b><br>
+               Para que la animación aparezca en el click, añade a lo anterior la clase <code>click</code> seguida de la animación que quieras con el prejifo click-, por ejemplo <code>click-jump</code>.
+               </p>
+<pre>
+div class="anim click click-jump"
+</pre>        
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p><a href="#anim" class="btn btn-main btn-hollow">Ver docu completa</a></p>
+      </div>
+       
+        </div>
+        
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-font-awesome"></i> Integración con FA
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>Puedes integrar los iconos de FA usando su forma clásica <code>i class="fa fa-heart"</code> en textos, títulos, botones, tablas... para usarlos dentro de tu CSS, echa un ojo a documentación completa.
+                </p>
+               
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p>
+              <a href="#fa" class="btn btn-main btn-hollow">Ver docu completa</a> 
+              <a href="http://fontawesome.io/icons/" class="btn btn-main btn-hollow" title="Ir a web de FontAwesome"><i class="fa fa-flag"></i></a> 
+          </p>
+      </div>
+        </div>
+    </div><!-- /row -->
+    
+    <div class="row" id="easy-3">
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-hand-pointer-o"></i> Botones
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-mouse-pointer fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Estilo base</b><br>
+                Para usar los botones, debes poner la clase de bootstrap <code>btn</code>. Las clases de bootstrap que afecta a los botones son totalmente compatibles con Pidget, por ejemplo para grupos de botones o tamaños. Una vez esté, puedes añadir las siguientes personalizaciones:
+                </p>
+                <p><i class="fa fa-tint cta-text"></i> <b>Colorear botones</b></p>
+<pre>
+a class="btn btn-main"
+</pre>
+                <p><i class="fa fa-square-o cta-text"></i> <b>Botones huecos</b> (hollow), compatible con los colores. Solo tienes que añadir la clase <code>btn-hollow</code></p>
+<pre>
+a class="btn btn-main btn-hollow"
+</pre>
+                <p><i class="fa fa-circle-o cta-text"></i> <b>Botones redondeados</b>, compatible con colores y con estilo hueco. Solo tienes que añadir la clase <code>btn-rounded</code></p>
+<pre>
+a class="btn btn-main btn-hollow btn-rounded"
+</pre>
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p><a href="#btns" class="btn btn-main btn-hollow">Ver docu completa</a></p>
+      </div>
+       
+        </div>
+        
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-tasks"></i> Formularios
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+                <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-tint fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Coloreando los input</b> <br>
+                
+                Añade clases de color al <code>div</code> que contiene los input llamado <code>input-group</code> en la documentaciónde bootstrap
+<pre>
+div class="input-group input-group-cta"
+</pre>
+                </p>
+                
+                <p>
+                
+                <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-chevron-down fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Mejoras y personalizaciones</b>
+                <ul>
+                    <li>Myoboku integra un estilo para el estado <code>:focus</code> de los input, creando una caja de línea de puntos color gris para que el usuario sepa qué input tiene seleccionado</li>
+                    <li>Si necesitas un <code>input type="checkbox"</code> para que el usuario acepte las condiciones, añade la <code>class="policy"</code> a un <code>div</code> que envuelva al <code>input</code> con su <code>label</code> para hacerlo más grande y usable en móvil.</li>
+                    <li>Los <code>select</code> carecen de la flechita por defecto y se puede reemplazar con un icono de bootstrap desde el SASS. Por defecto, Myoboku usa <code>fa-chevron-down</code>(<i class="fa fa-chevron-down"></i>)</li>
+                </ul>
+                </p>
+               
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p>
+              <a href="#forms" class="btn btn-main btn-hollow">Ver docu completa</a>
+          </p>
+      </div>
+        </div>
+    </div><!-- /row -->
+    
+    <div class="row" id="easy-4">
+        
+        <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-table"></i> Tablas
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+                <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-th fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Tablas responsive</b> <br>
+                
+                Añade el atributo <code>data-col</code> en cada fila de la tabla para que se convierta en una mini tabla en formato movil
+<pre>
+td data-col="Nombre"> Ralf
+td data-col="Apellido"> Fields
+td data-col="Email"> fields@email.com
+td data-col="Dirección"> Concorde Rue 7
+</pre>
+                </p>
+                
+                <p>
+                
+                <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-tint fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Coloreando las tablas</b> <br>
+                
+                Añade clases de color a la tabla para pintarla con los colores de la paleta de Myoboku
+<pre>
+table class="table table-main"
+</pre>
+                </p>
+               
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p>
+              <a href="#tables" class="btn btn-main btn-hollow">Ver docu completa</a> 
+          </p>
+      </div>
+    </div>
+    
+    <div class="col-md-6 fat">
+            <h4 class="cta-bg sup-text low slim">
+                <i class="fa fa-bars"></i> Menú lateral
+            </h4>
+            <div class="tiny"></div>
+              
+                <p>
+                
+               <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x cta-text"></i>
+                  <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                </span>
+                
+                <b>Creando el menú</b>
+                </p>
+                <p>1. Añade un nav con la clase e ID <code>toggle-nav</code></p>
+<pre>
+nav class="toggle-nav" id="toggle-nav"
+</pre>
+                <p>2. Añade un <code>button</code> con las siguientes caraterísticas</p>
+<pre>
+button data-toggle="toggle-menu" data-target="#toggle-nav" class="navbar-toggle"    
+</pre>
+                <p>3. Añade un script bajo el footer con el código</p>
+<pre>
+$("[data-toggle='toggle-menu']").click(function() {
+    var selector = $(this).data("target");
+    var selector = $(this).toggleClass('clicked');
+    $('#toggle-nav').toggleClass('view-menu');
+});
+</pre>      
+      
+      <div class="text-center">
+          <p>¿Quieres saber más?</p>
+          <p><a href="#anim" class="btn btn-main btn-hollow">Ver docu completa</a></p>
+      </div>
+       
+    </div>
+    </div><!-- /row -->
+    
+</section>
+
+<section id="docu" class="container-fluid up fat">
+    <h3 class="h1 bold">
+        <span class="main-text">Documentación</span> completa
+    </h3>
+    
+    <p>Myoboku es una colección de recursos creados sobre el framework Twitter Bootstrap. En sí mismo, no es un framework, sino que es una "ampliación" de Bootstrap con un uso simplificado para cualquier programador con bases de HTML y CSS, ya que ni siquiera hace falta saber SASS, el lenguaje en el que está programado. Con un poco de conocimiento de programación (php, js, etc...), Myoboku se convierte en una herramienta poderosa para personalizar webs en segundos.</p>
+        <p><b>¿Por qué Myoboku no es un framework?</b></p>
+        <ul>
+            <li>Al estar construído sobre el CDN de bootstrap, el estilo de Myoboku está preparado para sobreescribir el estilo de bootstrap en cualquier web, incluídos algunos temas o plugins de wordpress que traen bootstrap instalado por defecto.</li>
+            <li>Bootstrap 3 es uno de los frameworks más usados del mundo, por el tiempo que lleva desarrollado y por su simplicidad y potencia para construir webs rápidamente. Precisamente por esto, Myoboku marcará la diferencia notablemente con otras web en bootstrap sin apenas esfuerzo. Debido al tiempo que lleva desarrollado y al uso masificado, el estilo de bootstrap, aunque sigue siendo funcional, se ha vuelto un poco rancio gráficamente. Myoboku corrige este desperfecto.</li>
+            <li>Aunque bootstrap es bastante completo, es antiguo, y hay ciertos detalles que debe tener (botones mejorados, tablas responsive...). Myoboku incorpora estos detalles para que no tengas que estar buscando trozos de código en stackoverflow.</li>
+        </ul>
+    
+    <article id="setup">
+        <h4>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x cta-text"></i>
+          <i class="fa fa-share-alt fa-stack-1x fa-inverse"></i>
+        </span>
+        Preparando SASS</h4>
+        <p>SASS es un precompilador de CSS enriquecido que trabaja en local. Sigue estos pasos para configurar un entorno en GULP que te permita editar los archivos y ver los cambios en el navegador gracias a <code>browser-sync</code></p>
+        <ol>
+            <li>Instala <a href="https://nodejs.org/es/">node.js</a></li>
+            <li>Abre la consola y sitúate en la carpeta donde vayas a editar Myoboku con <code>cd</code> seguido de la ruta de la carpeta</li>
+            <li>Instala NPM siguiendo los pasos de <a href="https://www.npmjs.com/get-npm">su web</a></li>
+            <li>Abre el archivo <code>gulpfile.js</code> en la raiz de Myoboku e instala las dependencias necesarias usando el comando de la consola <code>npm install --save-dev</code>(ejemplo <code>npm install --save-dev gulp</code>)
+            <br>
+            <pre style="margin: 15px 0">
+/*
+* Dependencias de gulp
+*/
+var gulp = require('<u>gulp</u>');
+var concat = require('<u>gulp-concat</u>');
+var uglify = require('<u>gulp-uglify</u>');
+var browserSync = require('<u>browser-sync</u>').create();
+var sass = require('<u>gulp-sass</u>');
+var reload = browserSync.reload;
+            </pre>
+            </li>
+            <li>Ahora, configura el origen que va a reproducir el navegador en el archivo <code>gulpfile.js</code> (línea 11):
+                <ul>
+                    <li>Si estás trabajando con XAMPP u otro programa de server local, en la tarea del server debes comentar la línea de server y descomentar la línea de proxy añadiendo la ruta de tu proyecto en XAMPP</li>
+                    <li>Si estás trabajando en una carpeta normal, comenta la línea de proxy y descomenta la lína de server, que ejecutará la raíz de la carpeta indicada antes.</li>
+                </ul>
+            </li>
+            <li>Ya lo tienes todo configurado. Solo tienes que volver a la consola y ejecutar en el directorio base el comando <code>gulp</code>. Automáticamente se activará todo y se abrirá una ventana de navegador con tu proyecto. Si editas cualquier archivo html, php o scss, el cambio se recargará automáticamente en la ventana del navegador. Ojo, las librerias de Myoboku están alojadas en una carpeta llamada <code>/sass/lib</code>, cuando quieras cambiar algo en ellas, debes guardar el archivo y luego guardar el <code>/sass/master.scss</code> dentro de la carpeta <code>/sass</code></li>
+            <li>El archivo resultante de Myoboku se guardará en <code>/css/master/master.css</code>. Este es el archivo que debe leer tu html después de la llamada al estilo de bootstrap para poder sobreescribirlo correctamente.</li>
+        </ol>
+    </article>
+    <article id="var">
+        <h4>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x cta-text"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+        Variables de Myoboku</h4>
+        
+        <p class="cta-text"><b>Variables principales</b></p>
+        <p>Las variables de Myoboku estandarizan las partes más importantes del estilo partiendo de la base de bootstraps para una buena complementación.</p>
+        <p><b>La variable</b> <code>$auric</code></p>
+        <p>Esta variable determina todo el tamaño de la web, ya que todas las medidas en PX se han seteado con ella. Para partir de la base de Bootstrap, establece un valor de 15px.</p>
+        <p><b>Las variables de color</b></p>
+        <p>La paleta de colores de Myoboku contiene 5 colores de marca más los 3 colores de aviso establecidos por Bootstrap (danger, warning y success)</p>
+        <ul>
+            <li><code>$main</code> es el color principal de la marca</li>
+            <li><code>$cta</code> debe ser el color más llamativo de los 5 para llamar la atención</li>
+            <li><code>$sup</code> este color debe estar a juego con las dos variables anteriores, pero no destacar sobre ninguna de ellas</li>
+            <li><code>$trans</code> está pensado para ser un gris claro que sirva al diseñador para romper la monotonía del blanco</li>
+            <li><code>$base</code> este color es el negro de la web, el diseñador puede probar con varios tonos de negro</li>
+        </ul>
+        <p>Además Myoboku tiene las variables <code>$pale</code> (white) y <code>$nocolor</code> (transparent), muy necesarias a la hora de diseñar.</p>
+        <p class="cta-text"><b>Variables secundarias</b></p>
+        <p><b>Variables tipográficas</b></p>
+        <p>La variable <code>$icon-font</code> establece la familia de fuentes que contiene los iconos, por defecto es FontAwesome. La variable <code>$font-family</code> establece la tipografía de la web. Recuerda que debes cargar la fuente en el HTML si usas fuentes de Google Fonts.</p>
+        <p><b>Variables de luz</b></p>
+        <p>Como verás más adelante, los colores de Myoboku crean por sí mismos versiones oscuras y claras de sí mismos almacenados en clases. La cantidad de oscurecimiento y claridad que tienen esas versiones se determina con las variables <code>$darking</code> y <code>$lighting</code> que por defecto tienen un valor de 25%</p>
+        <p><b>Variables de z-index</b></p>
+        <p>La propiedad z-index puede generar confusiones cuando se trabaja con varios elementos con diferentes <code>position</code>. Myoboku crea 4 variables para controlar el eje Z: <code>$lowindex</code>, <code>$medindex</code>, <code>$superindex</code> y <code>$megaindex</code>.</p>
+    </article>
+    <article id="aux">
+        <h4>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x cta-text"></i>
+          <i class="fa fa-life-ring fa-stack-1x fa-inverse"></i>
+        </span>
+        Clases auxiliares</h4>
+        
+        <p>Más allá del uso por defecto de estas clases, su configuración es la siguiente:</p>
+        
+        <p><b>Clases para espaciar</b></p>
+        <p>Cada una de las 4 clases de tamaño importa el mixin que establece un valor en forma de padding superior/inferior o izquierdo/derecho. Este valor se calcula sobre la variable <code>$auric</code>, multiplicando por un valor numérico que hace la diferencia entre cada clase.</p>
+        
+<pre>
+@mixin v-spacing($value){
+    padding-top: $value;
+    padding-bottom: $value;
+}
+@mixin h-spacing($value){
+    padding-left: $value;
+    padding-right: $value;
+}
+
+//Vertical padding
+.tiny {
+  @include v-spacing($auric / 2);
+}
+.low {
+  @include v-spacing($auric);
+}
+.med {
+  @include v-spacing($auric * 2);
+}
+.up {
+  @include v-spacing($auric * 4);
+}
+
+//Horizontal padding
+.thin{
+  @include h-spacing($auric / 2);
+}
+.slim{
+  @include h-spacing($auric);
+}
+.fat{
+  @include h-spacing($auric * 2);
+}
+.dope{
+  @include h-spacing($auric * 4);
+}
+</pre>
+        <p><b>Clases para formatear</b></p>
+        <p>Estas clases están escritas en CSS puro, así que no hay mucho más que explicar. Funcionan de la siguiente forma:</p>
+<pre>
+//Cleaners
+.no-margin{
+  margin: 0 !important;
+}
+.no-padding{
+  padding: 0 !important;
+}
+.no-border{
+  border: 0 !important;
+}
+.no-border-radius{
+    border-radius: 0 !important;
+}
+</pre>
+        
+    </article>
+    <article id="color">
+        <h4>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x cta-text"></i>
+          <i class="fa fa-tint fa-stack-1x fa-inverse"></i>
+        </span>
+        Colores</h4>
+        
+        <p>Para crear o editar colores de la paleta, primero hay que añadir el color como variable en el archivo <code>/lib/_variables.scss</code> siguiendo la estructura marcada <a href="#easy-1">+ info</a>. Luego hay que añadir dicha variable al mapa o "array" de colores que está en el mismo documento:</p>
+        
+        <pre>
+$array_color :
+  (nocolor, $nocolor),
+  (pale, $pale),
+  (main, $main),
+  (cta, $cta),
+  (sup, $sup),
+  (trans, $trans),
+  (base, $base),
+  (danger, $danger),
+  (warning, $warning),
+  (success, $success);
+        </pre>
+        
+        <p>Cuando lo tengas listo, el archivo <code>/lib/_color.scss</code> creará automáticamente las clases para colorear fondos y/o textos de elementos html; además, creará las mismas clases con los mismos colores en sus variantes claras y oscuras. Esta variación la determinan las variables <code>$darking</code> y <code>$lighting</code>. Para fabricar las clases.</p>
+        
+        <p><b>¿Cómo funciona el archivo _color.scss?</b></p>
+        
+        <p>Primero, necesitamos declarar el <code>mixin</code> que creará las clases en el CSS final. Tiene 2 valores: uno para "imprimir" el nombre del color en la declaración de la clase (<code>$name</code>) y otro para traer el código del color almacenado en su variable (<code>$color</code>):</p>
+        
+        <pre>
+//Constructor
+@mixin build-color-printer($name, $color){
+    
+    .#{$name}-text{
+        color: $color !important;
+    }
+    .#{$name}-bg{
+        background-color: $color !important;
+    }
+}
+        </pre>
+        
+        <p>Luego, programamos el condicional para que tenga un tercer valor llamado <code>$matrix</code>. Este valor solo puede tener 3 valores: <code>light</code> para la variación clara, <code>dark</code> para la oscura o <code>def</code> (default) para no tener variación. </p>
+        <p>Si el valor es dark o light, este condicional añadirá al nombre del color el prefijo de su variación + un guión, es decir, dark- o light-. Dentro de esta condición, la variable <code>$color</code> que guarda el color del array, se aclara u oscurece en base a las variables globales <code>$darking</code> y <code>$lighting</code>.</p>
+        
+        <pre>
+//Condicional para variantes tonales
+@mixin build-color($name, $color, $matrix){
+    
+    @if $matrix == 'def'{
+        @include build-color-printer($name, $color)
+    } @else{
+        $name : $matrix + '-' + $name; 
+        
+        @if $matrix == 'dark'{
+            @include build-color-printer($name, darken($color, $darking))   
+        } 
+        @if $matrix == 'light'{
+            @include build-color-printer($name, lighten($color, $lighting))   
+        }
+    }
+    
+}
+        </pre>
+        
+        <p>Por último, necesitamos ejecutar el constructor con el condicional haciendo que el array de colores mande cada uno de sus colores. Lo ejecutamos 3 veces para fabricar las clases nomales, las oscuras y las claras.</p>
+        
+        <pre>
+//Ejecutando el constructor con el array_color
+@each $name, $color in $array_color{
+    @include build-color($name, $color, 'def');
+    @include build-color($name, $color, 'dark');
+    @include build-color($name, $color, 'light');
+}
+        </pre>
+        
+    </article>
+</section>
+
+<footer class="cta-bg up fat sup-text">
+   
+    <img class="logo vivify infinite ball" src="img/logo.png" alt="Myoboku">
+    <h5 class="text-center"><b>Myoboku</b> <i class="fa fa-creative-commons"></i> 2017</h5>
+    <p class="small text-center">A handcrafted code by Rafafields and his friends: </p>
+    <p class="text-center friends">
+        <a class="btn btn-base btn-xs" href="http://getbootstrap.com/" title="Bootstrap 3">Bootstrap 3</a> 
+        <a class="btn btn-base btn-xs" href="https://codepen.io/" title="Codepen">Codepen</a> 
+        <a class="btn btn-base btn-xs" href="http://fontawesome.io/icons/" title="Font Awesome">Font Awesome</a> 
+        <a class="btn btn-base btn-xs" href="https://stackoverflow.com/" title="Stack Overflow">Stack Overflow</a> 
+        <a class="btn btn-base btn-xs" href="https://wordpress.org/" title="Wordpress.org">Wordpress</a> 
+        <a class="btn btn-base btn-xs" href="https://www.udemy.com/" title="Udemy">Udemy</a> 
+        <a class="btn btn-base btn-xs" href="https://nodejs.org/es/" title="Node.js">Node.js</a> 
+        <a class="btn btn-base btn-xs" href="https://www.npmjs.com/" title="NPM">NPM</a>
+        <a class="btn btn-base btn-xs" href="https://gulpjs.com/" title="GULP">GULP</a>
+        <a class="btn btn-base btn-xs" href="http://sass-lang.com/" title="Sass">Sass</a>
+        <a class="btn btn-base btn-xs" href="https://css-tricks.com/" title="CSSTricks">CSSTricks</a>
+        <a class="btn btn-base btn-xs" href="https://www.smashingmagazine.com/" title="Smashing Magazine">Smashing Magazine</a>
+    </p>
+    
+</footer>
+  <!--  Llamando a Bootstrap  -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--  Llamando a jQuery de Google  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--  Cargando estilo compilado  -->
+  <link rel="stylesheet" href="css/master/master.css">
+  <!--  Libreria vivify-->
+  <link rel="stylesheet" href="css/vivify.min.css">
+  <!--  Llamando a jQuery de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Custom Myoboku.js -->
+  <script src="js/myoboku.js"></script>
+
+</section>
+</body>
+</html>
