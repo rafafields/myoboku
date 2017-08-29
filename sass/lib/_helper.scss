@@ -1,0 +1,50 @@
+@mixin v-spacing($value){
+    padding-top: $value;
+    padding-bottom: $value;
+}
+@mixin h-spacing($value){
+    padding-left: $value;
+    padding-right: $value;
+}
+
+//Vertical padding
+.tiny {
+  @include v-spacing($auric / 2);
+}
+.low {
+  @include v-spacing($auric);
+}
+.med {
+  @include v-spacing($auric * 2);
+}
+.up {
+  @include v-spacing($auric * 4);
+}
+
+//Horizontal padding
+.thin{
+  @include h-spacing($auric / 2);
+}
+.slim{
+  @include h-spacing($auric);
+}
+.fat{
+  @include h-spacing($auric * 2);
+}
+.dope{
+  @include h-spacing($auric * 4);
+}
+
+//Cleaners
+.no-margin{
+  margin: 0 !important;
+}
+.no-padding{
+  padding: 0 !important;
+}
+.no-border{
+  border: 0 !important;
+}
+.no-border-radius{
+    border-radius: 0 !important;
+}

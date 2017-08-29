@@ -1,0 +1,250 @@
+
+    $bgtogglenav     : $main;
+    $texttogglenav   : $sup;
+    $hovertogglenav  : $cta;
+    
+    #toggle-nav{
+        width: 0;
+        overflow: hidden;
+        
+        @include transition;
+    }
+
+    @media (max-width:768px){
+        #toggle-nav.view-menu{width: 50%;}
+    }
+    
+    @media (min-width:768px) and (max-width:992px){
+        #toggle-nav.view-menu{width: 40%;}
+        
+    }
+    
+    @media (min-width:992px){
+        #toggle-nav.view-menu{width: 30%;}
+    }
+
+    .navbar-toggle{
+        @extend .no-border;
+        @extend .no-border-radius;
+        @extend .no-margin;
+            
+        position: fixed;
+        display: block !important;
+        right: $auric;
+        top: $auric;
+        width: $auric*2.3;
+        height: $auric*2.3;
+        font-size: $auric;
+        z-index: $superindex;
+            
+        background: $bgtogglenav;
+        
+        .icon-bar{
+            @include transition;
+            background: $texttogglenav;
+            width: 100%;
+        }
+        
+        &.clicked{
+            .icon-bar{
+                @include transition;
+                background: $texttogglenav;
+
+                &:nth-child(2){
+                    transform: rotate(45deg) translateY(2px) translateX(2px);
+                }
+                &:nth-child(3){
+                    display: none;
+                }
+                &:nth-child(4){
+                    transform: rotate(-45deg) translateY(-2px) translateX(2px);
+                }
+            } 
+        }
+            
+    }
+    
+    .toggle-nav{
+        
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: $bgtogglenav;
+        z-index: $medindex;
+        
+        #brand,
+        .featured-content{
+            padding: $auric;
+        }
+        
+        .featured-content {
+            background: darken($bgtogglenav, $darking);
+            
+            a{display: block}
+        }
+        
+        ul{
+            
+        @extend .no-margin;
+        @extend .no-padding;
+        
+            a{
+                @include transition;
+                display: block;
+                position: relative;
+                color: $texttogglenav;
+                padding: $auric;
+                
+                .fa{@include transition;}
+                
+                //Con esta clase, el icono se destaca
+                &.has-icon {
+                    &{
+                        padding-left: $auric*4; 
+                    }
+                    .fa {
+                        position: absolute;
+                        font-size: $auric*1.3;
+                        top:0;
+                        left:0;
+                        bottom: 0;
+                        padding: $auric;
+                        min-width: $auric*3.3;
+                        text-align: center;
+                        background: darken($bgtogglenav, $darking);
+                    }
+                    &:hover{
+                        .fa{
+                            background: $hovertogglenav;
+                            color: $pale;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background: $texttogglenav;
+                    color: $bgtogglenav;
+                    text-decoration: none;
+                    
+                        .fa{
+                            color: $hovertogglenav;
+                        }
+                    }
+            }
+            
+            &.toggle-nav-social-menu{
+                text-align: center;
+                padding: $auric 0 !important;
+                li {
+                    display: inline-block;
+                    a {
+                        padding: $auric;
+                        font-size: $auric*1.3;
+                        &:hover{
+                            background: $nocolor;
+                        }
+                    }
+                }
+            }
+            
+            //Nested menu AKA un ul dentro de otro
+            
+            //Li padre
+            li.has-submenu{
+                >a{
+                    &:after{
+                        @include fa-raw($fa-var-plus-circle);
+                        position: absolute;
+                        top:0;
+                        right:0;
+                        padding: $auric;
+                    }
+                    
+// Activar solo cuando esté activo el archivo _animations.scss
+                    
+                    
+//                    &:hover{
+//                        &:after{
+//                            @include animated(
+//                              $setname        : GROW,
+//                              $setdelay       : 0.1s,
+//                              $setdirection   : def,
+//                              $setduration    : def,
+//                              $setresult      : def,
+//                              $setcount       : infinite,
+//                              $setstyle       : ease-in-out);
+//                        }
+//                    }
+                }
+                
+                &.open{
+                    >a{
+                        &:after{
+                            @include transition;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+            
+            //Ul hijo
+            ul{
+                padding-left: $auric !important;
+                background: darken($bgtogglenav, $darking);
+                list-style: none;
+                right: 0;
+                left: auto;
+                top: $auric*3.3;
+                border-radius: 0;
+                
+                @include transition;
+                
+                a{  
+                    font-size: $auric*0.75;
+                    
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: $auric/2;
+                        background: $hovertogglenav;
+                        top:0;
+                        left: -$auric*2;
+                        opacity: 0;
+                        @include transition;
+                    }
+                    
+                    &:hover{
+                        background: $bgtogglenav;
+                        color: $texttogglenav;
+                        &:before{
+                            opacity: 1;
+                            left: -$auric;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .toggle-nav-footer{
+            color: $texttogglenav;
+            text-align: center;
+            font-size: $auric / 1.5;
+            img{
+                margin-bottom: $auric;
+            }
+        }
+        
+        &:before{
+            content:'';
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+            background: rgba($bgtogglenav, 0.5);
+        }
+    }

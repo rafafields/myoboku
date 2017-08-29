@@ -1,0 +1,45 @@
+$auric      : 20px;
+
+$nocolor    : transparent;
+$pale       : white;
+$main       : #77C4D3;
+$cta        : #EA2E49;
+$sup        : #F6F792;
+$trans      : #DAEDE2;
+$base       : #333745;
+
+$danger     : crimson;
+$warning    : gold;
+$success    : limegreen;
+
+$icon-font  : 'FontAwesome';
+$font-family: 'Karu-Regular';
+$bold       : 700;
+$small      : $auric*0.75;
+
+$darking    : 15%;
+$lighting   : 5%;
+
+$lowindex   : 9;
+$medindex   : 99;
+$bigindex   : 999;
+$superindex : 9999;
+$megaindex  : 999999;
+
+$mediaquery : 
+    (xs, 0px),
+    (sm, 768px),
+    (md, 992px),
+    (lg, 1200px);
+
+$array_color :
+  (nocolor, $nocolor),
+  (pale, $pale),
+  (main, $main),
+  (cta, $cta),
+  (sup, $sup),
+  (trans, $trans),
+  (base, $base),
+  (danger, $danger),
+  (warning, $warning),
+  (success, $success);

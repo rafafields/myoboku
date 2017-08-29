@@ -1,0 +1,38 @@
+//Constructor
+@mixin build-color-printer($name, $color){
+    
+    .#{$name}-text{
+        color: $color !important;
+    }
+    .#{$name}-bg{
+        background-color: $color !important;
+    }
+    .#{$name}-brd{
+        border-color: $color !important;
+    }
+}
+
+//Condicional para variantes tonales
+@mixin build-color($name, $color, $matrix){
+    
+    @if $matrix == 'def'{
+        @include build-color-printer($name, $color)
+    } @else{
+        $name : $matrix + '-' + $name; 
+        
+        @if $matrix == 'dark'{
+            @include build-color-printer($name, darken($color, $darking))   
+        } 
+        @if $matrix == 'light'{
+            @include build-color-printer($name, lighten($color, $lighting))   
+        }
+    }
+    
+}
+
+//Ejecutando el constructor con el array_color
+@each $name, $color in $array_color{
+    @include build-color($name, $color, 'def');
+    @include build-color($name, $color, 'dark');
+    @include build-color($name, $color, 'light');
+}

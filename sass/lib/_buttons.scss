@@ -1,0 +1,153 @@
+//Buttons
+.btn {
+  border: 0;
+  color: #333;
+  font-size: $auric * 0.8;
+    
+  //font-weight: bold;
+  //@extend b;
+  font-family: 'Karu-BoldItalic';
+    
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: $auric / 2 $auric;
+  margin: $auric / 3;
+    
+  $btn-shadow : -($auric/4);
+    
+  box-shadow: inset 0 $btn-shadow rgba(0,0,0,0.1);
+  background-image: none;
+
+  @include transition;
+
+  //ROUND
+  &.btn-rounded{
+    border-radius: $auric * 2;
+  }
+
+  //HOVER
+  &:hover{
+    transform: translateY($auric / 5);
+    box-shadow: inset 0 $btn-shadow/2 rgba(0,0,0,0.1);
+  }
+
+  //FOCUS
+  &:focus{
+    @include focus($pale);
+      color:white !important;
+  }
+
+  //ACTIVE - Bootstrap base active is already awesome!
+
+  //REMOVE MARGIN
+
+  //COlORS
+  @each $name, $color in $array_color{
+    &.btn-#{$name}{
+      $btn-text : white;
+      @include btnbg($color);
+        @if $name == base {
+          box-shadow: inset 0 -$auric/3 rgba(255,255,255,0.1);
+      }
+    }
+  }
+
+  //HOLLOW
+  &.btn-hollow {
+    background: transparent !important;
+    box-shadow: none;
+    border: $auric / 6 solid $base;
+
+    &:hover {
+      color: $base;
+    }
+
+    @each $name, $color in $array_color{
+      &.btn-#{$name}{
+        @include btnhollow($color);
+      }
+    }
+  }
+    
+  //PANIC
+  
+  &.btn-panic{
+    width: $auric * 10;
+    height: $auric * 10;
+    font-size: $auric; 
+    border-radius: 50%;
+    white-space: normal;
+    text-align: center;
+    box-shadow: inset 0 -10px 3px rgba(0,0,0,0.2);
+    
+    &:hover{
+      box-shadow: inset 0 -5px 3px rgba(0,0,0,0.2);
+    }
+    
+    //SIZE
+    &.btn-xs{
+      width: $auric * 6;
+      height: $auric * 6;
+      font-size: $auric * 0.7; 
+      letter-spacing: 2px;
+    }
+    //SIZE
+    &.btn-sm{
+      width: $auric * 10;
+      height: $auric * 10;
+      font-size: $auric; 
+      letter-spacing: 2px;
+    }
+    //SIZE
+    &.btn-md{
+      width: $auric * 14;
+      height: $auric * 14;
+      font-size: $auric * 1.5; 
+    }
+    //SIZE
+    &.btn-lg{
+      width: $auric * 17;
+      height: $auric * 17;
+      font-size: $auric * 2; 
+    }
+  }
+
+  //Sizes
+  &.btn-lg{font-size: $auric * 1.5;}
+  &.btn-md{font-size: $auric * 1;}
+  &.btn-sm{font-size: $auric * 0.7; letter-spacing: 2px;}
+  &.btn-xs{font-size: $auric * 0.5; letter-spacing: 2px;}
+
+  //STATUS
+
+  @each $name, $color in $array_color{
+    &.btn-status-#{$name}{
+      @include status($color);
+    }
+  }
+    
+    //Safety size settings
+    
+    @if $auric > 15px {
+        @media (max-width: 768px){
+            font-size: $auric * 0.5 !important;
+            padding: $auric/2.5 $auric*0.7; 
+        }
+    }
+
+}// Close btn
+
+.btn-group,
+.btn-group-vertical{
+  .btn{
+    margin: 0;
+  }
+}
+
+.btn-group-vertical {
+  .btn{
+    &:hover{
+      transform: translateY(0);
+    }
+  }
+}

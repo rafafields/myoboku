@@ -1,0 +1,36 @@
+section#loading {
+    background: rgba($sup, 0.9);
+    @include fixed-full-screen;
+    z-index: $megaindex;
+    
+    $loading-size: $auric*2;
+    
+    .loading-outer{
+        position: absolute;
+        @include super-center(top, $loading-size*4);
+        @include super-center(left, $loading-size*4);
+        width: $loading-size*4;
+        height: $loading-size*4;
+    }
+    
+    .loading-text{
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .loading-icon-outer {
+        
+        color: white;
+        text-align: center;
+        padding: $loading-size/2 0;
+        border-radius: 50%;
+        height: $loading-size*2;
+        width: $loading-size*2;
+        position: relative;
+        @include super-center(left, $loading-size*2);
+        
+        .loading-icon{
+            font-size: $loading-size;
+        }
+    }
+}

@@ -1,0 +1,218 @@
+// keyframes crossbrowsing mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Animation delay mixin
+@mixin anim-delay($value) {
+  -webkit-animation-delay: $value; /* Safari 4.0 - 8.0 */
+  animation-delay: $value;
+}
+
+//Animation direction mixin
+@mixin anim-direction($value) {
+  -webkit-animation-direction: $value; /* Safari 4.0 - 8.0 */
+  animation-direction: $value;
+}
+
+//Animation duration mixin
+@mixin anim-duration($value) {
+  -webkit-animation-duration: $value; /* Safari 4.0 - 8.0 */
+  animation-duration: $value;
+}
+
+//Animation result mixin
+@mixin anim-result($value) {
+  -webkit-animation-fill-mode: $value; /* Safari 4.0 - 8.0 */
+  animation-fill-mode: $value;
+}
+
+//Animation count mixin
+@mixin anim-count($value) {
+  -webkit-animation-iteration-count: $value; /* Safari 4.0 - 8.0 */
+  animation-iteration-count: $value;
+}
+
+//Animation style mixin
+@mixin anim-style($value) {
+  -webkit-animation-timing-function: $value; /* Safari 4.0 - 8.0 */
+  animation-timing-function: $value;
+}
+
+//Mixin ejecutor
+@mixin animated( $setname, $setdelay, $setdirection, $setduration, $setresult, $setcount, $setstyle ) {
+
+  //Name
+  -webkit-animation-name: $setname; /* Safari 4.0 - 8.0 */
+  animation-name: $setname;
+
+  //Valores por defecto cuando el parametro de la variable es el texto def
+  @if $setdelay      == 'def'  { $setdelay : 0s; }
+  @if $setdirection  == 'def'  { $setdirection : normal; }
+  @if $setduration   == 'def'  { $setduration : 1s; }
+  @if $setresult     == 'def'  { $setresult : forwards; }
+  @if $setcount      == 'def'  { $setcount : 1; }
+  @if $setstyle      == 'def'  { $setstyle : ease; }
+
+  //Delay
+  @include anim-delay($setdelay);
+  //Direction
+  @include anim-direction($setdirection);
+  //Duration
+  @include anim-duration($setduration);
+  //Result
+  @include anim-result($setresult);
+  //Count
+  @include anim-count($setcount);
+  //Style
+  @include anim-style($setstyle);
+
+  /*
+  ---- Coleccion de animaciones ----
+  */
+
+  //LEVITATE
+  @include keyframes(LEVITATE) {
+    0%   {transform: translate3d(0,$auric*2,0);}
+    40%  {transform: translate3d(0,$auric,0);}
+    100% {transform: translate3d(0,$auric*2,0);}
+  }
+  //JUMP
+  @include keyframes(JUMP) {
+    0%   {transform: translateY(0);}
+    40%  {transform: translateY(-$auric*1.5);}
+    80%  {transform: translateY(0);}
+    90%  {transform: translateY($auric*0.5);}
+    100% {transform: translateY(0);}
+  }
+  //JUMP
+  @include keyframes(GROW) {
+    0%   {transform: scale(1);}
+    40%  {transform: scale(1.2);}
+    100% {transform: scale(1);}
+  }
+  //TAP
+  @include keyframes(TAP) {
+    0%   {width: 1px; height: 1px; opacity: 0;}
+    40%  {width: 50px; height: 50px; opacity: 1;}
+    100% {width: 100px; height: 100px; opacity: 0;}
+  }
+  //FADE
+  @include keyframes(FADE) {
+    0%   {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY($auric*2);}
+  }
+  //LOADING
+  @include keyframes(LOADING) {
+    0%   {opacity: 0; height: 0;}
+    5%   {opacity: 1; height: 100%;}
+    80%  {opacity: 1; height: 100%;}
+    100% {opacity: 0; height: 0;}
+  }
+
+} //Mixin animated end
+
+//Creando clases para animar
+.anim{
+  //Clases normales
+  &.levitate{
+    @include animated(
+      $setname        : LEVITATE,
+      $setdelay       : def,
+      $setdirection   : def,
+      $setduration    : 1.5s,
+      $setresult      : none,
+      $setcount       : infinite,
+      $setstyle       : ease-in-out);
+  }
+  &.grow{
+    @include animated(
+      $setname        : GROW,
+      $setdelay       : def,
+      $setdirection   : def,
+      $setduration    : 1.5s,
+      $setresult      : none,
+      $setcount       : infinite,
+      $setstyle       : ease-in-out);
+  }
+  &.loading{
+    @include animated(
+      $setname        : LOADING,
+      $setdelay       : def,
+      $setdirection   : def,
+      $setduration    : 3s,
+      $setresult      : forwards,
+      $setcount       : def,
+      $setstyle       : ease-in-out);
+  }
+  //Clases que se activan al clicar
+  //Para usar estas clases en divs, hace falta añadir tabindex="1" para que HTML reconozca que tiene :focus
+    &.click{
+      &:focus{
+        @include focus($nocolor);
+        &.click-jump{
+          @include animated(
+            $setname        : JUMP,
+            $setdelay       : 0.1s,
+            $setdirection   : def,
+            $setduration    : 0.3s,
+            $setresult      : none,
+            $setcount       : 1,
+            $setstyle       : ease-in-out);
+        }
+        &.click-grow{
+          @include animated(
+            $setname        : GROW,
+            $setdelay       : 0.1s,
+            $setdirection   : def,
+            $setduration    : 0.3s,
+            $setresult      : forwards,
+            $setcount       : 1,
+            $setstyle       : ease-in-out);
+        }
+        &.click-fade{
+          @include animated(
+            $setname        : FADE,
+            $setdelay       : 0s,
+            $setdirection   : def,
+            $setduration    : 0.3s,
+            $setresult      : forwards,
+            $setcount       : 1,
+            $setstyle       : ease-in-out);
+        }
+        &.click-tap{
+          position: relative;
+          &:after{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: $pale;
+            bottom: 20%;
+            left: 20%;
+
+            @include animated(
+              $setname        : TAP,
+              $setdelay       : 0.1s,
+              $setdirection   : def,
+              $setduration    : 0.3s,
+              $setresult      : forwards,
+              $setcount       : 1,
+              $setstyle       : ease-in-out);
+          }
+        }
+      }
+    }
+}

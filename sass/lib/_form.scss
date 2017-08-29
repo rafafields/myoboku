@@ -1,0 +1,123 @@
+//Errores
+.form-control{
+    @include transition;
+    &:focus{
+      border-color: inherit;
+      @include focus($trans);
+    }
+    .has-error &{
+      @include placeholder($danger);
+      border-color: $danger;
+      &:focus{
+        border-color: $danger;
+        @include focus($danger);
+      }
+    }
+    .has-error.error-warning &{
+      @include placeholder(darken($warning, 50%));
+      border-color: $warning;
+      background: lighten($warning, 50%);
+      &:focus{
+        border-color: $warning;
+        @include focus($warning);
+      }
+    }
+  }//form-control end
+
+  //Icon inputs
+  @each $name, $colorbg in $array_color {
+    .input-group-#{$name}{
+      .input-group-addon{
+        @include input-addon($colorbg, white);
+          i.fa{
+              width: $auric;
+          }
+      }
+      input, select{
+        border-color: $colorbg;
+      }
+      &.select-container{
+          &:before{
+              color: $colorbg !important;
+          }      
+      }
+  }
+  }
+      
+  .input-group-addon {
+    .has-error &{
+      @include error-danger;
+    }
+    .has-error.error-warning &{
+      @include error-warning;
+    }
+  }
+  .has-error{
+    .form-control-feedback {
+      color: $danger;
+    }
+  }
+
+  //Alerts
+  .alert-danger {
+      margin: $auric 0;
+      @include error-danger;
+  }
+  .alert-warning {
+      margin: $auric 0;
+      @include error-warning;
+  }
+
+  //Select
+  .select-container{
+    position: relative;
+    select {
+        cursor: pointer !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+    }
+    &:before {
+      font-family: $icon-font;
+      content: "\f078";
+      color: $trans;
+      position: absolute;
+      right: $auric;
+      top: $auric;
+      line-height: 0.5;
+    }
+      
+      &.form-group-lg{
+          select{
+              height: inherit;
+          }
+      }
+  }
+  //Radio
+  input{
+    @include transition;
+    &[type="radio"]{
+      &:focus{
+        @include focus($trans);
+      }
+    }
+  }
+  //Policy
+  .policy{
+    @extend .low;
+    &>*{
+      float: left;
+    }
+    input[type="checkbox"]{
+      width: $auric * 2;
+      height: $auric * 2;
+      &:focus{
+        @include focus($trans);
+      }
+    }
+    label {
+      padding: $auric / 2;
+    }
+    @include clearfix;
+  }
