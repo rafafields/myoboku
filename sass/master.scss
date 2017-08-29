@@ -1,0 +1,46 @@
+@import 'lib/variables';
+@import 'lib/mixins';
+@import 'lib/helper';
+@import 'lib/color';
+@import 'lib/custom-font';
+@import 'lib/font';
+//@import 'lib/animations';
+
+// Es necesario para trabajar con iconos sin poner su clase
+@import 'fa/font-awesome';
+@import 'lib/buttons';
+@import 'lib/form';
+@import 'lib/tables';
+@import 'lib/toggle_nav';
+@import 'lib/valign_grid';
+@import 'lib/loading';
+
+
+
+
+//Jumbotron
+
+
+.logo{
+    width: 100px;
+    position: relative;
+    @include super-center(left, 100px);
+}
+
+.jumbotron{
+    background: $sup;
+}
+
+article{
+    margin-bottom: $auric*4;
+}
+
+footer{
+    a{
+        color: $base;
+        
+        &:hover{
+            color: $sup;
+        }
+    }
+}
