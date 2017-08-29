@@ -1,0 +1,76 @@
+// Custom fonts
+
+$custom-font-active : true;
+
+@mixin build-custom-font ($name, $weight) {
+    
+    $full-name : $name + '-' + $weight;
+    
+    @font-face {
+    font-family: "" + $full-name + "";
+    src:    url("../../fonts/" + $full-name + ".woff") format('woff'),
+            url("../../fonts/" + $full-name + ".eot") format('eot');
+    font-weight: normal;
+    font-style: normal;
+    }
+}
+
+//Array de fuentes
+
+$array-custom-font : 
+    (Karu, ExtraBold),
+    (Karu, ExtraBoldItalic),
+    (Karu, Bold),
+    (Karu, BoldItalic),
+    (Karu, Italic),
+    (Karu, Light),
+    (Karu, LightItalic),
+    (Karu, Regular);
+
+$cf-r     : Karu-Regular;
+$cf-b     : Karu-Bold;
+$cf-bi    : Karu-BoldItalic;
+$cf-e     : Karu-ExtraBold;
+$cf-ei    : Karu-ExtraBoldItalic;
+$cf-i     : Karu-Italic;
+$cf-l     : Karu-Light;
+$cf-li    : Karu-LightItalic;
+
+//Ejecutar el constructor
+
+@each $name, $weight in $array-custom-font {
+    
+    @include build-custom-font ($name, $weight);
+    
+    $full-name : $name + '-' + $weight;
+    
+    .cf-#{$full-name}{
+        font-family: $full-name;
+    }
+}
+
+//Creando clases para fuentes custom
+
+@mixin set-weight($w){
+    font-family: "" + $w + "";
+}
+
+b, .bold {
+    @include set-weight($cf-b);
+    
+    i, .i{
+        @include set-weight($cf-bi);
+    }
+}
+
+i, .i {
+    @include set-weight($cf-i);
+}
+
+.light {
+    @include set-weight($cf-l);
+    
+    i, .i {
+        @include set-weight($cf-li);
+    }
+}
